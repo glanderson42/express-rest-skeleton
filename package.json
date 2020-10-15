@@ -1,0 +1,26 @@
+{
+  "name": "express-rest-skeleton",
+  "version": "1.0.0",
+  "description": "Skeleton for express rest API",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/glanderson42/express-rest-skeleton.git"
+  },
+  "author": "Vass Mark <vmark0818@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/glanderson42/express-rest-skeleton/issues"
+  },
+  "homepage": "https://github.com/glanderson42/express-rest-skeleton#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "helmet": "^4.1.1",
+    "morgan": "^1.10.0"
+  }
+}
