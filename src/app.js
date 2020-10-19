@@ -1,5 +1,3 @@
-'use strict'
-
 const bodyParser = require('body-parser');
 const express = require('express');
 const morgan = require('morgan');
@@ -18,12 +16,16 @@ app.use(helmet());
 app.use(cors());
 app.use(express.json());
 app.use(bodyParser.urlencoded({
-    extended: true
+  extended: true
 }));
+
+routes(app, express);
+
+app.use('/api/v1', (req, res) => {
+  res.json({ status: 'Ok' });
+});
 
 app.use(notFoundMiddleware);
 app.use(errorHandlerMiddleware);
-
-routes(app, express);
 
 module.exports = app;
