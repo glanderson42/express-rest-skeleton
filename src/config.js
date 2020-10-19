@@ -14,12 +14,20 @@ const config = convict({
     env: 'PORT',
   },
   middleware: {
-    secret: {
-      doc: 'The secret used in jwt',
-      format: String,
-      default: 'Secret',
-      env: 'SECRET',
-    },
+    jwt: {
+      secret: {
+        doc: 'The secret used in jwt',
+        format: String,
+        default: 'Secret',
+        env: 'SECRET',
+      },
+      experies: {
+        doc: 'Experies of the jwt token',
+        format: String,
+        default: '168h',
+        env: 'EXPERIES'
+      }
+    }
   },
 });
 
