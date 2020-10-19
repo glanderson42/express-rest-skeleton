@@ -1,5 +1,7 @@
 const jwt = require('jsonwebtoken');
 
+const config = require('../config');
+
 function checkToken(req, res, next) {
   let token = req.headers['x-access-token'] || req.headers.authorization;
   if (token !== undefined && token.startsWith('Bearer ')) {
@@ -8,7 +10,7 @@ function checkToken(req, res, next) {
 
   if (token) {
     // eslint-disable-next-line consistent-return
-    jwt.verify(token, 'secret', (err, decoded) => {
+    jwt.verify(token, config.get('middleware.jwt.secret'), (err, decoded) => {
       if (err) {
         return res.json({
           success: false,
@@ -28,8 +30,8 @@ function checkToken(req, res, next) {
 function generateToken(payload) {
   return jwt.sign(
     { payload },
-    'secret',
-    { expiresIn: '168h' }
+    config.get('middleware.jwt.secret'),
+    { expiresIn: config.get('middleware.jwt.experies') }
   );
 }
 
