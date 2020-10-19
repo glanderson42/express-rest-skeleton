@@ -1,5 +1,3 @@
-'use strict';
-
 const convict = require('convict');
 
 const config = convict({
@@ -24,3 +22,5 @@ const config = convict({
     },
   },
 });
+
+module.exports = config;
