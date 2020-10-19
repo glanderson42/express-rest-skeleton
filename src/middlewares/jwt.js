@@ -32,3 +32,8 @@ function generateToken(payload) {
     { expiresIn: '168h' }
   );
 }
+
+module.exports = {
+  checkToken,
+  generateToken
+};
