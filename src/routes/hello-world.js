@@ -1,9 +1,8 @@
-'use strict';
-
 module.exports = (app, express) => {
-    const router = express.Router();
+  const router = express.Router();
 
-    router.get('/', require('../controllers/hello-world/get'));
+  // eslint-disable-next-line global-require
+  router.get('/', require('../controllers/hello-world/get'));
 
-    return router;
+  return router;
 };
